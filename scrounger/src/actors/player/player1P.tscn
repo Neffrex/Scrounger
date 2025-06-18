@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bigtdb2m6m6fu"]
+
+[ext_resource type="Script" uid="uid://c1tuppcbryifl" path="res://src/actors/player/player_1P.gd" id="1_yfmx4"]
+[ext_resource type="PackedScene" uid="uid://cxbm7637tohdb" path="res://src/modules/inputs/keyboard/keyboard_input.tscn" id="2_uygap"]
+[ext_resource type="PackedScene" uid="uid://ci5wn660egg7e" path="res://assets/models/body.glb" id="3_5a8gu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ke3dc"]
+
+[node name="Player1P" type="CharacterBody3D"]
+script = ExtResource("1_yfmx4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ke3dc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="KeyboardInput" parent="." instance=ExtResource("2_uygap")]
+
+[node name="Head" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.575169, -0.419744)
+current = true
+
+[node name="body" parent="." instance=ExtResource("3_5a8gu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.63238, 0)

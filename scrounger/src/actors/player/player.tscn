@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bun25xa5yv301"]
+
+[ext_resource type="Script" uid="uid://dse6ujnpdxphc" path="res://character_body_3d.gd" id="1_xhfnw"]
+[ext_resource type="PackedScene" uid="uid://ci5wn660egg7e" path="res://assets/models/body.glb" id="2_kpjcp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kpjcp"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_xhfnw")
+jump_strenght = 8000
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_kpjcp")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="body" parent="Pivot" instance=ExtResource("2_kpjcp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.705214, 0)

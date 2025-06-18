@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyavabsjs8eq2"]
+
+[ext_resource type="Script" uid="uid://bpnqcs866xeva" path="res://src/modules/movement/movement.gd" id="1_pt3j7"]
+
+[node name="Movement" type="Node3D"]
+script = ExtResource("1_pt3j7")
